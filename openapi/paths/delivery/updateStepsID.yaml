@@ -1,0 +1,61 @@
+put:
+  tags:
+    - Envíos
+  summary: Actualizar pasos del envío por idDelivery
+  description: 'Este método te permite actualizar los pasos de un envío usando el id del envío. Ahora bien, el flujo de un envío puede tener distintas formas. Las formas más comunes son: 
+    1. CREATED -> CANCELED (En caso de que el envío sea cancelado por el cliente) 2. CREATED -> REJECTED (En caso de que el logístico decida rechazar un envío) 
+    3. CREATED -> ACCEPTED -> READY_PICKUP -> PICKED_UP -> IN_COMING -> DROP_OFF -> FINISHED (En caso de que el envío sea entregado satisfactoriamente, pero saltandose el paso de distribución) 
+    4. CREATED -> ACCEPTED -> READY_PICKUP -> PICKED_UP -> DISTRIBUTION -> IN_COMING -> DROP_OFF -> FINISHED (En caso de que el envío sea entregado satisfactoriamente, siguiendo el paso de distribución)'
+  operationId: updateStepsID
+  parameters:
+  - name: idDelivery
+    in: query
+    schema:
+      type: string
+      example: 304
+    description: Id del envío
+  responses:
+    '200':
+      description: Success
+      content: 
+        application/json:
+          schema:
+            $ref: '../../components/schemas/delivery/updateStepsID-positive.yaml'
+    '400': 
+      description: Unauthorized
+      content: 
+        application/json:
+          schema:
+            $ref: '../../components/schemas/delivery/updateStepsID-negative.yaml'
+  requestBody:
+    headers:
+      environment:
+        description: País donde se encuentra el usuario.
+        schema:
+          type: string
+          example: "ni"
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            stepsCode:
+              type: string
+              enum: ["CREATED", "CANCELLED", "ACCEPTED", "REJECTED", "READY_PICKUP", "PICKED_UP" , "ANNULLED", "DISTRIBUTION", "IN_COMING", "DROP_OFF", "FINISHED"]
+              example: "ANNULLED"
+            name:
+              type: string
+              example: "Orden anulada"
+            description:
+              type: string
+              example: "El cliente anuló la orden"
+  x-codeSamples:
+    - lang: "C#"
+      source:
+        $ref: "../../code_samples/csharp/delivery/updateStepsID.cs"
+    - lang: PHP
+      source:
+        $ref: "../../code_samples/PHP/delivery/updateStepsID.php"
+    - lang: Python
+      source:
+        $ref: "../../code_samples/Python/delivery/updateStepsID.py"

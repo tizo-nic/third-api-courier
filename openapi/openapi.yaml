@@ -30,16 +30,12 @@ paths:
     $ref: paths/auth/refresh-token.yaml
   /delivery/get/?codeDelivery={code}:
     $ref: paths/delivery/buscardeliverycode.yaml
-  /delivery/get/?idDelivery={id}:
+  /delivery/get/?idDelivery={idDelivery}:
     $ref: paths/delivery/buscardeliveryID.yaml
-  /delivery/new:
-    $ref: paths/delivery/new.yaml
-  /delivery/new/:
-    $ref: paths/delivery/new-with-card.yaml
-  /delivery/confirm/{code}:
-    $ref: paths/delivery/confirm.yaml
-  /delivery/estimate:
-    $ref: paths/delivery/estimate.yaml
+  /delivery/update-steps/?idDelivery={idDelivery}:
+    $ref: paths/delivery/updateStepsID.yaml
+  /delivery/update-steps/?codeDelivery={codeDelivery}:
+    $ref: paths/delivery/updateStepsCode.yaml
   /delivery/lite/:
     $ref: paths/delivery/delivery.yaml
   /system-data/status-deliveries/{idStatusDelivery}/:
@@ -56,22 +52,6 @@ paths:
     $ref: paths/data/status-delivery/status-delivery.yaml
   /system-data/steps-deliveries/:
     $ref: paths/data/steps-delivery/steps-delivery.yaml
-  # /vendors/stores/{idStore}/notifications/:
-  #   $ref: paths/notifications/updatenotifications.yaml
-  # /vendors/stores/{idStor}/notifications/:
-  #   $ref: paths/notifications/createnotifications.yaml
-  # /vendors/stores/{idStoree}/notifications/:
-  #   $ref: paths/notifications/listnotifications.yaml
-  /vendors/stores/{idStore}/branches/{idBranch}/:
-    $ref: paths/branches/updatebranches.yaml
-  /vendors/stores/{idStor}/branches/{idBranch}/:
-    $ref: paths/branches/getonebranches.yaml
-  /vendors/stores/{idStore}/branches/{idBranch}:
-    $ref: paths/branches/deletebranches.yaml
-  /vendors/stores/{idStor}/branches:
-    $ref: paths/branches/listbranches.yaml
-  /vendors/stores/{idStore}/credit-bag/:
-    $ref: paths/store/get-creditbag.yaml
 components:
   securitySchemes:
     main_auth:

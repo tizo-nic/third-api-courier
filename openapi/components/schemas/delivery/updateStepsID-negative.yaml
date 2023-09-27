@@ -1,0 +1,8 @@
+type: object
+properties:
+  messages:
+    type: string
+    example: "ID de envío inválido"
+  status:
+    type: integer
+    example: 400

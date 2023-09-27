@@ -3,10 +3,8 @@
 
 Esta API contiene todas las funcionalidades de envíos que usted necesita para integrarla en su negocio, en caso de que usted no tenga un sistema existente, le recomendamos que use las apps pronto disponibles en Play Store, Apple Store o se contacte con nosotros y les proveeremos sus credenciales. Entre las principales funcionalidades se encuentran:
 
-
-- Creación de envíos usando los distintos aliados de Tizo.
 - Seguimiento en tiempo real, así como el historial de los envíos realizados.
-- Métricas de su negocio, así como algunas variables de su interés.
+- Cambiar los estados de los envios
 
 Además, en el contexto de nuestro sistema, trabajamos con dos entornos distintos: desarrollo y producción. Estos entornos se utilizan para realizar pruebas y desplegar la aplicación final, respectivamente. Para acceder a la funcionalidad de la API en cada uno de estos entornos, es necesario utilizar los enlaces adecuados. 
  1. staging-api.tizo.co: Este enlace está configurado para apuntar al entorno de desarrollo de nuestra API. Cuando accedes a staging-api.tizo.co, estás interactuando con una versión de la API que se encuentra en desarrollo activo. Este entorno es utilizado principalmente por los desarrolladores y el equipo de pruebas para probar nuevas funcionalidades, realizar pruebas exhaustivas y detectar posibles errores o problemas antes de implementar los cambios en el entorno de producción. Es importante tener en cuenta que el entorno de desarrollo (staging-api.tizo.co) puede ser inestable en comparación con el entorno de producción, ya que se encuentra en constante desarrollo. Por lo tanto, si estás trabajando con staging-api.tizo.co, ten en cuenta que podrías encontrar errores o comportamientos no deseados que aún no han sido corregidos.

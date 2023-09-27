@@ -1,8 +1,0 @@
-post:
-  tags:
-    - Finanzas
-  summary: Listar cuentas por cobrar
-  description: 
-  operationId: confirm
-  security:
-    - basic_auth: [ Authorization ]
