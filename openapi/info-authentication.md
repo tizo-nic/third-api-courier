@@ -16,5 +16,5 @@ Para obtener el valor del token necesitas realizar un POST request hacia https:/
 {<br>
 "username": "your_username",<br>
 "password": "your_password",<br>
-"typeUser": "store_api"<br>
+"typeUser": "logistics"<br>
 }<br>

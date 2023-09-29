@@ -7,8 +7,7 @@ properties:
         description: Establece que tipo de usuario 
         type: string
         enum:
-          - store_api
-          - store
+          - logistics
         example: store
       refresh_token:
         description: Token de refresco
