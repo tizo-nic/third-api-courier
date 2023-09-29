@@ -4,12 +4,126 @@ properties:
     type: object
     properties:
       type_user:
-        description: Tipo de usuario (vendor, store_api)
+        description: Tipo de usuario (logistics_user)
         type: string
         required: true
-        example: vendor_user
+        example: logistics_user
+      permissions:
+        type: array
+        description: Permisos del Usuario
+        items: 
+          type: object
+          description: Permiso del usuario
+          properties:
+            idModule: 
+              type: integer
+              description: Id del Modulo
+              example: 1
+            idPermission:
+              type: integer
+              description: Id del Permiso
+              example: 1
+            idParent:
+              type: integer
+              description: Id del Modulo Padre
+              example: 1
+            nameModule: 
+              type: string
+              description: Nombre del Modulo
+              example: 1
+            permissions:
+              type: string
+              description: Nombre del permiso
+              example: Update
+            childrenModule:
+              type: array
+              description: Permisos del Usuario
+              example: []
       user:
-        $ref: ../User2.yaml
+        type: object
+        properties:
+          idLogisticsUser:
+            description: Id del usuario
+            type: integer
+            example: 1
+          idStatusLogisticsUser:
+            description: Id del estado del usuario
+            type: integer
+            example: 1
+          idProfileManagerUser:
+            description: Id del tipo de usuario Manager 
+            type: integer
+            example: 1
+          statusName: 
+            description: Nombre del estado del Usuario
+            type: string
+            example: Activo
+          pathImage:
+            description: Dirección de la imagen del usuario
+            type: string
+            example: https://ui-avatars.com/api/?name=v_adriana_9&size=512&background=0D8ABC&color=fff
+          profileName:
+            description: Nombre del tipo de usuario Manager 
+            type: string
+            example: Finanzas
+          idCourier:
+            description: Id del courier
+            type: integer
+            example: 1
+          courierName:
+            description: Nombre del courier
+            type: string
+            example: tizo
+          identification:
+            description: Identificación del usuario
+            type: string
+            example: 001-4430696-0016J
+          firstName: 
+            description: Nombre del usuario
+            type: string
+            example: Adriana
+          lastName:
+            description: Apellido del usuario
+            type: string
+            example: Bolaños
+          phone:
+            description: Número de teléfono del usuario
+            type: string
+            example: +50563397024
+          email:
+            $ref: ../Email.yaml
+          ipCreation: 
+            description: Ip de creación del usuario
+            type: string
+            example: 190.143.250.2
+          gender:
+            description: Género del usuario
+            type: integer
+            example: 3
+          birthDate:
+            description: Fecha de nacimiento del usuario
+            type: date
+            example: 2022-08-04
+          loginLast:
+            description: Último Login del usuario
+            type: date
+            example: 2022-07-12T19:05:37.403+00:00
+          dateCreation:
+            description: Fecha de creación del usuario
+            type: date
+            example: 2022-06-21T16:13:09.567+00:00
+          dateLastUpdate:
+            description: Fecha de última actualización del usuario
+            type: date
+            example: 2022-06-21T16:13:09.567+00:00
+          username:
+            description: Nombre de usuario
+            type: string
+            example: v_adriana_9
+          connect: 
+            description: Estado de conexión del usuario
+            type: boolean
+            example: false
   message:
     type: string
     description: Mensaje positivo de respuesta
